@@ -17,18 +17,26 @@ Future<String> name() {
   });
 }
 
-/// Contoh Looping di dalam Async
-Future<List<String>> getAllProductName() async {
-  List<String> products = ['baju'];
-  List<String> productsResult = [];
+/// Contoh
+Future<List<String>> getAllProductName(
+    List<String> products, int pengali) async {
+  List<String> result = [];
 
-  Future.delayed(Duration(seconds: 1), () {
-    for (var i = 1; i <= products.length; i++) {
-      productsResult.add(products[i] * 2);
+  await Future.delayed(Duration(seconds: 2), () {
+    for (var i = 0; i < products.length; i++) {
+      result.add('${products[i]} ' * pengali);
     }
   });
 
-  return productsResult;
+  return result;
+}
+
+List<String> products = [];
+
+Future<void> getAllProduct() async {
+  for (var i = 1; i <= products.length; i++) {
+    products.add(products[i]);
+  }
 }
 
 /// Fungsi asynchronous
@@ -38,8 +46,8 @@ Future<List<String>> getAllProductName() async {
 /// 4. Menunggu Database selesai ter-isi/Write
 
 void main() async {
-  await helloAsync();
-  print(await name());
+  // await helloAsync();
+  // print(await name());
 
-  print(await getAllProductName());
+  print(await getAllProductName(['Baju', 'Sepatu', 'Celana'], 3));
 }

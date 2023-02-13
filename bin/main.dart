@@ -3,7 +3,8 @@
 // import 'package:alterr_flexi/collection_list_set_main.dart' as root;
 // import 'package:alterr_flexi/collection/collection_map_main.dart' as root;
 // import 'package:alterr_flexi/product_main.dart' as root;
-import 'package:alterr_flexi/oop/contoh_3/mobil_main.dart' as root;
+// import 'package:alterr_flexi/oop/contoh_3/mobil_main.dart' as root;
+import 'package:alterr_flexi/async_await/async_await_main_1.dart' as root;
 
 void main(List<String> arguments) {
   root.main();
