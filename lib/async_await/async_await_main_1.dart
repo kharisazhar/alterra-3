@@ -18,16 +18,17 @@ Future<String> name() {
 }
 
 /// Contoh Looping di dalam Async
-Future<String> getAllProductName() async {
-  var productName = 'Baju';
+Future<List<String>> getAllProductName() async {
+  List<String> products = ['baju'];
+  List<String> productsResult = [];
 
   Future.delayed(Duration(seconds: 1), () {
-    for (var i = 1; i <= 50; i++) {
-      productName = '$productName ke-$i\n';
+    for (var i = 1; i <= products.length; i++) {
+      productsResult.add(products[i] * 2);
     }
   });
 
-  return productName;
+  return productsResult;
 }
 
 /// Fungsi asynchronous
